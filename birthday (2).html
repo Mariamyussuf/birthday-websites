@@ -1708,41 +1708,7 @@ if (musicToggle && bgMusic) {
   });
 }
 
-// Pause background music when video plays, resume when video is paused/ends
-if (videoEl && bgMusic) {
-  videoEl.addEventListener('play', () => {
-    if (!bgMusic.paused) {
-      musicWasPlaying = true;
-      bgMusic.pause();
-      if (musicToggle) {
-        musicToggle.classList.add('paused');
-        musicToggle.classList.remove('playing');
-      }
-    } else {
-      musicWasPlaying = false;
-    }
-  });
-
-  videoEl.addEventListener('pause', () => {
-    if (musicWasPlaying) {
-      bgMusic.play();
-      if (musicToggle) {
-        musicToggle.classList.add('playing');
-        musicToggle.classList.remove('paused');
-      }
-    }
-  });
-
-  videoEl.addEventListener('ended', () => {
-    if (musicWasPlaying) {
-      bgMusic.play();
-      if (musicToggle) {
-        musicToggle.classList.add('playing');
-        musicToggle.classList.remove('paused');
-      }
-    }
-  });
-}
+// Background music will no longer pause when video plays
 
 })();
 </script>
