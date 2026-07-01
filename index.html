@@ -676,69 +676,7 @@ section.vis .child-photo-wrap, #ch-child.vis .child-photo-wrap { opacity: 1; tra
   font-weight: 300;
 }
 
-/* ─── CH04 — VIDEO SECTION ──────────────────────── */
-#ch04 {
-  min-height: 100vh; padding: 10vh 6vw;
-  background: var(--deep);
-  display: flex; flex-direction: column; justify-content: center;
-}
-.reel-eyebrow {
-  font-size: 0.65rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--ember);
-  margin-bottom: 2rem;
-  opacity: 0; transform: translateY(10px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-section.vis .reel-eyebrow { opacity: 1; transform: translateY(0); }
 
-.reel-wrap {
-  position: relative; max-width: 840px;
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-}
-section.vis .reel-wrap { opacity: 1; transform: translateY(0); }
-
-.reel-frame {
-  width: 100%; aspect-ratio: 16/9;
-  background: #080510;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden; position: relative;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 20px 60px -15px rgba(0,0,0,0.5);
-}
-.reel-placeholder {
-  text-align: center;
-}
-.reel-placeholder p {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic; font-size: 1.2rem;
-  color: var(--blush); margin-bottom: 0.5rem;
-}
-.reel-placeholder small {
-  font-size: 0.68rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--muted);
-}
-.reel-frame iframe,
-.reel-frame video { width: 100%; height: 100%; border: none; display: none; border-radius: 5px; }
-
-.reel-kinetic {
-  position: absolute; top: 0; left: 0; right: 0;
-  display: flex; justify-content: space-between;
-  padding: 1.2rem 1.5rem;
-  pointer-events: none; z-index: 2;
-}
-.reel-kinetic span {
-  font-size: 0.6rem; letter-spacing: 0.16em;
-  text-transform: uppercase; color: rgba(245,239,230,0.3);
-}
-.reel-title-float {
-  margin-top: 1.5rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  font-weight: 300; font-style: italic;
-  color: var(--blush);
-}
 
 /* ─── CH05 — LETTERS ────────────────────────────── */
 #ch05 {
@@ -990,9 +928,7 @@ code {
   .child-heading { font-size: clamp(1.6rem, 6vw, 2.2rem); }
   .child-body { max-width: 100%; font-size: 0.85rem; }
 
-  /* Video */
-  #ch04 { padding: 8vh 5vw; min-height: auto; }
-  .reel-title-float { font-size: 1rem; }
+
 
   /* Letters */
   #ch05 { padding: 8vh 6vw; min-height: auto; }
@@ -1229,25 +1165,6 @@ code {
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     CH04 — VIDEO
-══════════════════════════════════════ -->
-<section id="ch04">
-  <p class="reel-eyebrow">typical baby girl behavior 😂</p>
-  <div class="reel-wrap">
-    <div class="reel-frame">
-      <div class="reel-kinetic" aria-hidden="true">
-        <span>I just had to include it 😂</span>
-        <span>Tough outside, soft inside</span>
-      </div>
-
-      <video controls style="display:block">
-        <source src="video1.mp4" type="video/mp4">
-      </video>
-    </div>
-    <p class="reel-title-float">You look tough on the outside but so soft and sweet on the inside… with a little bit of strict 😭😭 omoooo Bolade you're strict I swear 😂 you're such a happy soul ❤️</p>
-  </div>
-</section>
 
 <!-- ══════════════════════════════════════
      CH05 — LETTERS
@@ -1674,8 +1591,7 @@ window.addEventListener('scroll', () => {
 /* BACKGROUND MUSIC CONTROLS */
 const bgMusic = document.getElementById('bg-music');
 const musicToggle = document.getElementById('music-toggle');
-const videoEl = document.querySelector('#ch04 video');
-let musicWasPlaying = false;
+
 
 function startMusic() {
   if (bgMusic) {
@@ -1708,7 +1624,7 @@ if (musicToggle && bgMusic) {
   });
 }
 
-// Background music will no longer pause when video plays
+
 
 })();
 </script>
